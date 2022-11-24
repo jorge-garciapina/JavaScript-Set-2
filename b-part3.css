@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h3 {
+  margin: 10px;
+}
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-div {
+  background-color: aliceblue;
+  border-radius: 10px;
+  display: flex;
+
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-text {
+  font-size: 1.5rem;
+  padding: 20px;
+  margin: 0;
+}
+
+#hashtag-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.boton {
+  height: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.boton:hover {
+  background-color: beige;
+  cursor: pointer;
+}
+.boton:active {
+  background-color: gray;
+}
