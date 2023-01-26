@@ -14,7 +14,12 @@
 // Thus, the regex that match the date format is:
 // REGEX = [a-zA-Z]+\s\d{2},\s\d{4}
 // EXAMPLE:
-let regexA = /[a-zA-Z]+\s\d{2},\s\d{4}/g;
+// OLD SOLUTION:
+// let regexA = /[a-zA-Z]+\s\d{2},\s\d{4}/g;
+// NEW SOLUTION:
+let regexA =
+  /^(January|February|March|April|May|June|July|August|September|October|November|December)\s\d{2},\s\d{4}/gi;
+
 let inputAa = "September 29, 1972";
 let inputAb = "February 99, 0001";
 let inputAc = "June 04, 3000";
@@ -70,7 +75,10 @@ let matchBd = inputBd.match(regexB);
 // Thus, the regex that solves this problem is:
 // REGEX: [a-zA-Z]+\.(java|cpp|txt)
 // EXAMPLE:
-let regexC = /[a-zA-Z]+\.(java|cpp|txt)/g;
+// OLD:
+// let regexC = /[a-zA-Z]+\.(java|cpp|txt)/g;
+// NEW:
+let regexC = /^[a-zA-Z]+\.(java|cpp|txt)$/g;
 let inputCa = "test.java";
 let inputCb = "program.cpp";
 let inputCc = "newReport.txt";
@@ -101,13 +109,16 @@ let matchCc = inputCc.match(regexC);
 // the regex engine: “In position 4 and position 5 look for the same you
 // matched in position 1 and position 2 respectively”.
 // In regex terminology:
-// *)	(CaGu1), (CaGu2), (CaGu3)  => (.{1,}) “any single character”.
+// *)	(CaGu1), (CaGu2), (CaGu3)  => (.{1}) “any single character”.
 // *)	(Same as CaGu1) => \1 “Capturing group 1”
 // *)	(Same as CaGu2) => \2 “Capturing group 2”
 // Thus, the regex that solves this problem is:
-// REGEX: (.{1,}) (.{1,}) (.{1,}) \2\1
+// REGEX: (.{1}) (.{1}) (.{1}) \2\1
 // EXAMPLE:
-let regexD = /(.{1,})(.{1,})(.{1,})\2\1/g;
+// OLD SOLUTION:
+// let regexD = /^(.{1,})(.{1,})(.{1,})\2\1$/g;
+// NEW SOLUTION:
+let regexD = /^(.{1})(.{1})(.{1})\2\1$/g;
 let inputDa = "abcba";
 let inputDb = "12321";
 let inputDc = "_1a1_";
